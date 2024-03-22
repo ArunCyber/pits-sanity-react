@@ -5,7 +5,7 @@ export default function Services(){
     return(
         <div>
             <div className="titleBar"><h1>Services</h1></div>
-            <Accordion></Accordion>  
+            <div className="pad-35-25"><Accordion></Accordion>  </div>
         </div>
        
     );

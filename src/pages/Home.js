@@ -4,13 +4,27 @@ import createClient from "../Client";
 import Carousel from "../components/Slider";
 
 
+const staicSlider = [
+    "title 1",
+    "title 2",
+    "title 3",
+    "title 4",
+    "title 5",
+    "title 6",
+    "title 7"
+]
+
+
 export default function Home(){
     const[postData, setPost] = useState(null);
 
     useEffect(() => {
         createClient.fetch(`*[_type == 'post']{
             title,
-            _id
+            _id,
+            'imageUrl': poster.asset->url,
+            poster,
+            _ref
         }`).then((data) => setPost(data))
         .catch(console.error);
     },[])
@@ -37,15 +51,19 @@ export default function Home(){
     return (
         <div>
             <div className="titleBar"><h1>Home</h1></div>
-            
-            {Array.isArray(postData) && postData.map((post, index) => (
+            <div className="pad-35-25"><Carousel items={postData ? postData.map(post => post.title) : []} /></div>
+            {/* <div className="pad-35-25"><Carousel items={staicSlider} /></div> */}
+            {/* <div className="pad-35-25"><Carousel /></div>  */}
+            {/* {Array.isArray(postData) && postData.map((post, index) => (
                 <div key={index}>
                     <h1>{post.title}</h1>
                     <input type="text" value={post.title} onChange={(e) =>handleChange(e, index)}></input>
                     <button onClick={(e)=>handleSendToSanity(post._id, post.title)}>Send to Sanity</button>
                 </div>
-            ) )}
-           {/* <Carousel items={postData}></Carousel> */}
+                
+            ) )} */}
+           
+             
          
         </div>
         

@@ -30,13 +30,15 @@ header nav ul li a:hover{
   padding-left: 35px;
 }
 .title{
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
+  border-bottom: 1px solid black;
   padding: 10px;
   cursor: pointer;
   position: relative;
+  font-weight: 500;
 }
 .title.active{
-  background-color: #ddd;
+  /* background-color: #ddd; */
 }
 .title::before{
   content: "";
@@ -56,4 +58,34 @@ header nav ul li a:hover{
 }
 .content.active{
   display: block;
+}
+.item{
+  border: 1px solid black;
+  padding: 10px;
+}
+.pad-35-25{
+  padding: 25px 35px;
+}
+.accordion-item{
+  margin-bottom: 20px;
+}
+.formdata{
+  width: 700px;
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+}
+.formdata input{
+  height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.formdata button{
+  width: 80px;
+  padding: 10px 0;
+  background: #c0221a;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
 }

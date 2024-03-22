@@ -1,26 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useState, useEffect} from "react";
+import ReactOwlCarousel from "react-owl-carousel";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import createClient from "../Client";
 
-export default function Nav(){
+export default function Carousel(){
+    const[sliderData, setsliderData] = useState(null);
+
+    useEffect(() => {
+        createClient.fetch(`*[_type == 'post']{
+            title,
+            _id,
+            'imageUrl': poster.asset->url,
+            poster,
+            _ref
+        }`).then((data) => setsliderData(data))
+        .catch(console.error);
+    },[])
+
+    const options = {
+        loop: false,
+        margin: 10,
+        dots:true,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    };
+
     return(
-        <header>
-            <div className="logo">
-                <img src="https://staging.pitsolutions.ch/blog/wp-content/uploads/2021/06/pits-web.svg"></img>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to={"/"}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to={"/services"}>Services</Link>
-                    </li>
-                    <li>
-                        <Link to={"/contact"}>Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        
+     
+        <ReactOwlCarousel className="owl-theme" {...options}>
+        {Array.isArray(sliderData) && sliderData.map((item, index) => (
+             
+             <div className="item" key={item._id}>
+                <div>
+                     <img src={item.imageUrl? item.imageUrl: []}></img>
+                     <h3>{item.title}</h3>
+                     {/* <h6>{item}</h6>
+                     <p>{item}</p> */}
+                 </div>
+             </div> 
+           
+      
+         ))} 
+            
+        </ReactOwlCarousel>   
+     
+          
+       
     );
 }
