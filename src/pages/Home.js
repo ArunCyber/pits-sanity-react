@@ -51,9 +51,9 @@ export default function Home(){
     return (
         <div>
             <div className="titleBar"><h1>Home</h1></div>
-            <div className="pad-35-25"><Carousel items={postData ? postData.map(post => post.title) : []} /></div>
+            {/* <div className="pad-35-25"><Carousel items={postData ? postData.map(post => post.title) : []} /></div> */}
             {/* <div className="pad-35-25"><Carousel items={staicSlider} /></div> */}
-            {/* <div className="pad-35-25"><Carousel /></div>  */}
+            <div className="pad-35-25"><Carousel /></div> 
             {/* {Array.isArray(postData) && postData.map((post, index) => (
                 <div key={index}>
                     <h1>{post.title}</h1>
