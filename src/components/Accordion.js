@@ -16,6 +16,7 @@ export default function Accordion(){
     const[accordiaonItems, setAccordiaonItems] = useState(null);
 
     useEffect(() => {
+        console.log('accordion');
         createClient.fetch(`*[_type == 'service']{
             title,
             description,
@@ -26,6 +27,7 @@ export default function Accordion(){
 
     const onTitleClick = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
+        console.log('active');
       }; 
 
     return(

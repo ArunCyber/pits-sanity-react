@@ -8,9 +8,11 @@ export default function Carousel(){
     const[sliderData, setsliderData] = useState(null);
 
     useEffect(() => {
+        console.log('slider');
         createClient.fetch(`*[_type == 'post']{
             title,
             _id,
+            description,
             'imageUrl': poster.asset->url,
             poster,
             _ref
@@ -45,6 +47,7 @@ export default function Carousel(){
                 <div>
                      <img src={item.imageUrl? item.imageUrl: []}></img>
                      <h3>{item.title}</h3>
+                     <p>{item.description}</p>
                      {/* <h6>{item}</h6>
                      <p>{item}</p> */}
                  </div>

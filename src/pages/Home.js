@@ -19,6 +19,7 @@ export default function Home(){
     const[postData, setPost] = useState(null);
 
     useEffect(() => {
+        console.log('post');
         createClient.fetch(`*[_type == 'post']{
             title,
             _id,

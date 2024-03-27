@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import createClient from "../Client"; // Assuming you have a Sanity client setup file
+import createClient from "../Client"; 
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -19,14 +19,15 @@ export default function Form() {
 
   const handleFormdata = async (event) => {
     event.preventDefault();
+    console.log('accordion');
     try {
       // Send data to Sanity
       await createClient.create({
-        _type: "form", // Replace "formData" with your document type
+        _type: "form", 
         ...formData
       });
       console.log("Data sent to Sanity successfully");
-      // Optionally, reset form fields or show success message
+      //reset form fields or show success message
       setFormData({
         firstname: "",
         lastname: "",
