@@ -43,7 +43,7 @@ export default function Carousel(){
         <ReactOwlCarousel className="owl-theme" {...options}>
         {Array.isArray(sliderData) && sliderData.map((item, index) => (
              
-             <div className="item" key={item._id}>
+             <div className="item" key={item._id} >
                 <div>
                      <img src={item.imageUrl? item.imageUrl: []}></img>
                      <h3>{item.title}</h3>

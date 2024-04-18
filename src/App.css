@@ -1,14 +1,16 @@
-header{
+
+
+/* header{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 35px 25px 35px;
-}
+} */
 .logo{
   height: 84px;
   width: 84px;
 }
-header nav ul{
+/* header nav ul{
   display: flex;
   list-style: none;
 }
@@ -21,7 +23,7 @@ header nav ul li a{
 }
 header nav ul li a:hover{
   color: #aa0f09;
-}
+} */
 .titleBar{
   background: #f6f6f6;
   height: 80px;

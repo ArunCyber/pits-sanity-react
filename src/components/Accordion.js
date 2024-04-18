@@ -16,7 +16,7 @@ export default function Accordion(){
     const[accordiaonItems, setAccordiaonItems] = useState(null);
 
     useEffect(() => {
-        console.log('accordion');
+        console.log( 'accordion');
         createClient.fetch(`*[_type == 'service']{
             title,
             description,
