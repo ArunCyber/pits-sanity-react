@@ -30,20 +30,20 @@ export default function Carousel(){
                 items: 1
             },
             600: {
-                items: 3
+                items: 2
             },
             1000: {
-                items: 4
+                items: 3
             }
         }
     };
 
     return(
      
-        <ReactOwlCarousel className="owl-theme" {...options}>
+        <ReactOwlCarousel className="container px-5 py-24 mx-auto owl-theme " {...options}>
         {Array.isArray(sliderData) && sliderData.map((item, index) => (
              
-             <div className="item" key={item._id} >
+             <div className="item transition-all rounded" key={item._id} >
                 <div>
                      <img src={item.imageUrl? item.imageUrl: []}></img>
                      <h3>{item.title}</h3>

@@ -16,7 +16,7 @@ code {
 }
 .banner_content{
   width: 500px;
-  background: #4d377140;
+  background: #101010a6;
   padding: 20px;
   left: 0;
   right: 0;
@@ -25,3 +25,30 @@ code {
   height: 255px;
   margin: auto auto;
 }
+.linkExternal{
+  background: #c0221a;
+  color: white;
+  padding: 1px 8px 3px;
+  border-radius: 10px;
+}
+.custom-bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: #c0221a;
+}
+.custom-bg-indigo-100 {
+  --tw-bg-opacity: 1;
+  background-color: #c0221a4d;
+}
+.custom-text-indigo-500 {
+  --tw-text-opacity: 1;
+  color: #c0221a;
+}
+.custom-bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: #c0221a;
+}
+.custom-text-gray-700 {
+  --tw-text-opacity: 1;
+  color: #ffff;
+}
+

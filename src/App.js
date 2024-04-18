@@ -1,14 +1,11 @@
 import './App.css';
-import { BrowserRouter, Routes,Route } from 'react-router-dom';
-import { Footer, Nav } from './components';
+import { BrowserRouter } from 'react-router-dom';
 import Router from './router/Router';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-        <Nav></Nav>
         <Router></Router>
-        <Footer></Footer>
     </BrowserRouter>
     
   );

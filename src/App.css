@@ -61,10 +61,7 @@ header nav ul li a:hover{
 .content.active{
   display: block;
 }
-.item{
-  border: 1px solid black;
-  padding: 10px;
-}
+
 .pad-35-25{
   padding: 25px 35px;
 }
