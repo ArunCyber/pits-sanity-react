@@ -1,55 +1,39 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import createClient from "../Client";
-import Checkbox from "./Checkbox";
-import Form from "./Form";
 
-const staicAccordiaonItems = [
-    {title:"title 1", description : <Form></Form>},
-    {title:"title 2", description : " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"},
-    {title:"title 3", description : <Checkbox></Checkbox>}
-]
 
-export default function Accordion(){
+export default function Accordion({accordiaonItems}){
 
     const[activeIndex, setActiveIndex] = useState(null);
-    const[accordiaonItems, setAccordiaonItems] = useState(null);
-
-    useEffect(() => {
-        console.log( 'accordion');
-        createClient.fetch(`*[_type == 'service']{
-            title,
-            description,
-            _id
-        }`).then((data) => setAccordiaonItems(data))
-        .catch(console.error);
-    },[accordiaonItems])
-
+    
     const onTitleClick = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
-        console.log('active');
-      }; 
-
+    }; 
+    
     return(
-        <div className="accordion" >
+
+        <div className="accordion container px-5 py-6 mx-auto" >
+            <div className="accordionBorder">
             {Array.isArray(accordiaonItems) && 
-                [...staicAccordiaonItems, ...accordiaonItems].map((item, index) => {
+               accordiaonItems.map((item, index) => {
                     const active = index === activeIndex ? 'active' : '';
                     return(
                     <div className="accordion-item" key={index}>
-                        <div className={`title ${active}`} onClick={() => onTitleClick(index)}>  
-                            <i className="arrow">
-                            </i>{item.title}
+                        <div className={`title flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3  ${active}`} onClick={() => onTitleClick(index)}>  
+                            {item.title}
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
                         </div>
-                        <div className={`content ${active}`}>{item.description}</div>
+                        <div className={`content p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 ${active}`}>
+                            <p className="mb-2 text-gray-500 dark:text-gray-400">{item.text}</p></div>
                     </div>
                     )
-                    
-                   
-                   
+   
                 })
             }
-            
+            </div>           
         </div>
+
     );
 }

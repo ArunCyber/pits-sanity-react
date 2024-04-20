@@ -43,32 +43,13 @@ export default function Form() {
     <div className="formdata">
       <form onSubmit={handleFormdata}>
         <label>First name</label>
-        <input
-          type="text"
-          name="firstname"
-          value={formData.firstname}
-          onChange={handleInputChange}
-        />
+        <input type="text" name="firstname" value={formData.firstname} onChange={handleInputChange}></input>
         <label>Last name</label>
-        <input
-          type="text"
-          name="lastname"
-          value={formData.lastname}
-          onChange={handleInputChange}
-        />
+        <input type="text" name="lastname" value={formData.lastname} onChange={handleInputChange}></input>
         <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
+        <input type="email" name="email" value={formData.email} onChange={handleInputChange}></input>
         <label>Message</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-        ></textarea>
+        <textarea name="message" value={formData.message} onChange={handleInputChange}></textarea>
         <button type="submit">Send</button>
       </form>
     </div>

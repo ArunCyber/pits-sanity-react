@@ -32,17 +32,17 @@ header nav ul li a:hover{
   padding-left: 35px;
 }
 .title{
-  /* background-color: #f4f4f4; */
+  /* background-color: #f4f4f4;
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding: 10px; */
   cursor: pointer;
   position: relative;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 .title.active{
   /* background-color: #ddd; */
 }
-.title::before{
+/* .title::before{
   content: "";
   position: absolute;
   background: url("https://wegwandern.ch/wp-content/themes/WEGW/img/filter_down.svg");
@@ -50,12 +50,16 @@ header nav ul li a:hover{
   height: 8px;
   right: 10px;
   top: 10px;
-}
-.title.active::before{
+} */
+/* .title.active::before{
   transform: rotate(180deg);
+} */
+.title.active svg{
+  transform: rotate(0deg);
 }
+
 .content{
-  padding: 10px;
+  /* padding: 10px; */
   display: none;
 }
 .content.active{
@@ -65,9 +69,9 @@ header nav ul li a:hover{
 .pad-35-25{
   padding: 25px 35px;
 }
-.accordion-item{
+/* .accordion-item{
   margin-bottom: 20px;
-}
+} */
 .formdata{
   width: 700px;
     margin: 25px auto;
@@ -90,4 +94,120 @@ header nav ul li a:hover{
   font-weight: 600;
   font-size: 15px;
   margin-top: 20px;
+}
+.list{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listImage {
+  position: relative;
+  overflow: hidden;
+}
+.listImage img{
+  width: 100%;
+    /* display: block; */
+    /* min-height: 150px; */
+    margin-bottom: 16px;
+    object-fit: cover;
+    vertical-align: middle;
+    height: 250px;
+}
+.listTitleDetails {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: #646464;
+  transition: 0.2s ease-in-out;
+  transform: translateY(100%);
+  opacity: 0;
+  padding: 50px 20px;
+}
+li.listItem{
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.listImage:hover .listTitleDetails {
+  opacity: 0.9;
+  transform: translateY(0);
+  /* border: 1px solid #008fc3; */
+}
+.listImage:hover .listContent {
+  opacity: 0;
+}
+.accordionBorder{
+  border: 1px solid rgb(229 231 235);
+  border-top: 0;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+.itemImage{
+  aspect-ratio: 3/2;
+}
+.owl-prev{
+  position: absolute;
+  left: 30px;
+  top: 45%;
+}
+.owl-next{
+  position: absolute;
+  right: 30px;
+  top: 45%;
+}
+.prev-slide{
+  background: url("https://wegwandern.ch/wp-content/themes/WEGW/img/left-arrow.svg");
+  width: 9px;
+  height: 15px;
+  display: inline-block;
+ 
+}
+.next-slide{
+  background: url("https://wegwandern.ch/wp-content/themes/WEGW/img/right-arrow.svg");
+  width: 9px;
+  height: 15px;
+  display: inline-block;
+}
+.owl-nav button{
+  background: #fdfdfd !important;
+  width: 35px;
+  height: 35px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+}
+.bgWrap{
+  padding: 23px 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #FFFFFF;
+  z-index: 1;
+}
+.bg_main::after{
+  content: "";
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+  opacity: 0.7;
+}
+.bgWrap h3{
+  font-size: 27px;
+  line-height: 37px;
+}
+.bgWrap h6{
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 7px;
 }

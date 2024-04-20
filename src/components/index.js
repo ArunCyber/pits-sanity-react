@@ -4,6 +4,9 @@ import Form from "./Form";
 import Nav from "./Nav";
 import Carousel from "./Slider";
 import Footer from "./Footer";
+import Grid from "./Grid";
+import Staticslider from "./Staticslider";
+import PostDetail from "./PostDetail";
 
 export {
     Accordion,
@@ -11,5 +14,8 @@ export {
     Form,
     Nav,
     Carousel,
-    Footer
+    Footer,
+    Grid,
+    Staticslider,
+    PostDetail
 }
