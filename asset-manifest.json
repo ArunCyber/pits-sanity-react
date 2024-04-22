@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/pits-sanity-react/static/css/main.44759c5f.css",
-    "main.js": "/pits-sanity-react/static/js/main.b7b91bcc.js",
+    "main.css": "/pits-sanity-react/static/css/main.c2b0efd3.css",
+    "main.js": "/pits-sanity-react/static/js/main.5ed429dc.js",
     "static/js/796.2daaab67.chunk.js": "/pits-sanity-react/static/js/796.2daaab67.chunk.js",
     "static/js/165.d08e1be3.chunk.js": "/pits-sanity-react/static/js/165.d08e1be3.chunk.js",
     "static/js/453.cf1af6d0.chunk.js": "/pits-sanity-react/static/js/453.cf1af6d0.chunk.js",
     "index.html": "/pits-sanity-react/index.html",
-    "main.44759c5f.css.map": "/pits-sanity-react/static/css/main.44759c5f.css.map",
-    "main.b7b91bcc.js.map": "/pits-sanity-react/static/js/main.b7b91bcc.js.map",
+    "main.c2b0efd3.css.map": "/pits-sanity-react/static/css/main.c2b0efd3.css.map",
+    "main.5ed429dc.js.map": "/pits-sanity-react/static/js/main.5ed429dc.js.map",
     "796.2daaab67.chunk.js.map": "/pits-sanity-react/static/js/796.2daaab67.chunk.js.map",
     "165.d08e1be3.chunk.js.map": "/pits-sanity-react/static/js/165.d08e1be3.chunk.js.map",
     "453.cf1af6d0.chunk.js.map": "/pits-sanity-react/static/js/453.cf1af6d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44759c5f.css",
-    "static/js/main.b7b91bcc.js"
+    "static/css/main.c2b0efd3.css",
+    "static/js/main.5ed429dc.js"
   ]
 }
