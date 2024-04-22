@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Home = ({menu}) => {
     const[homeData, setHomeData] = useState([]);
+    const[MenuData, setMenuData] = useState([]);
 
     useEffect(() => {
         createClient.fetch(`*[_type=="home"]{
@@ -101,7 +102,7 @@ const Home = ({menu}) => {
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
                                 </Link>
-                                :<Link className="mt-3 custom-text-indigo-500 inline-flex items-center" to={"/pits-sanity-react/" + item.title}>Learn More
+                                :<Link className="mt-3 custom-text-indigo-500 inline-flex items-center" to={"/pits-sanity-react/" + item.slug}>Learn More
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
