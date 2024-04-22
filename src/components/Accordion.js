@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 
-export default function Accordion({accordiaonItems}){
+const Accordion = ({accordiaonItems}) => {
 
     const[activeIndex, setActiveIndex] = useState(null);
     
@@ -37,3 +37,5 @@ export default function Accordion({accordiaonItems}){
 
     );
 }
+
+export default Accordion;

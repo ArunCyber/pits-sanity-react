@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Checkbox(){
+const Checkbox = () => {
     return(
         <div className="checkbox-wrapper">
             <input type="checkbox"></input>
@@ -9,3 +9,5 @@ export default function Checkbox(){
         </div>
     );
 }
+
+export default Checkbox;

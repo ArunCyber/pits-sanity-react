@@ -1,10 +1,9 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import ReactOwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Staticslider = ({imagesSetItems}) =>{
-    console.log(imagesSetItems);
 
     const options = {
         loop: true,

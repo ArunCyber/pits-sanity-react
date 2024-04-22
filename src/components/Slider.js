@@ -5,24 +5,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import createClient from "../Client";
 
-export default function Carousel(){
-    const[sliderData, setsliderData] = useState(null);
-
-    useEffect(() => {
-        console.log('slider');
-        createClient.fetch(`*[_type == 'post']{
-            title,
-            _id,
-
-            description,
-            "imageUrl": poster.asset->url,
-            "caption": poster.caption,
-            poster,
-            _ref
-        }`).then((data) => setsliderData(data))
-        .catch(console.error);
-    },[])
-
+export default function Carousel({sliderData}){
+ 
     const options = {
         loop: false,
         margin: 10,

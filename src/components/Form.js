@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import createClient from "../Client"; 
 
-export default function Form() {
+const Form = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -55,3 +55,5 @@ export default function Form() {
     </div>
   );
 }
+
+export default Form;
