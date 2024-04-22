@@ -1,8 +1,6 @@
 import {React} from "react";
 
 const Grid =({gridItems}) =>{
-console.log(gridItems);
-    
     return(
     <div className="container px-5 py-6 mx-auto">
         <ul className="list">

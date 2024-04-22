@@ -14,7 +14,7 @@ const Nav = ({menu}) => {
                         (item.slug === undefined ? 
                         <Link key={index} className={"mr-5 hover:text-gray-900 " + item._type} to={"/pits-sanity-react/"}>{item.title} </Link>
                         : <Link key={index} className={"mr-5 hover:text-gray-900 "+ item._type} to={"/pits-sanity-react/" + item.slug}>{item.title}</Link>)  
-                        : <Link key={index} className={"mr-5 hover:text-gray-900 "+ item._type} to={item.url}>{item.title}</Link>)  
+                        : <Link key={index} target="_blank" className={"mr-5 hover:text-gray-900 "+ item._type} to={item.url}>{item.title}</Link>)  
                     ))}     
                 </nav>
             </div>
