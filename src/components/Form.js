@@ -8,6 +8,27 @@ const Form = () => {
     email: "",
     message: ""
   });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const validate = () => {
+    if (!formData.firstname) {
+      return 'Please enter your name';
+    }
+    if (!formData.lastname) {
+      return 'Please enter your name';
+    }
+    if (!formData.email) {
+      return 'Please enter your email';
+    }
+    if (!formData.message) {
+      return 'Please enter your phone number';
+    }
+    return null;
+  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -19,7 +40,12 @@ const Form = () => {
 
   const handleFormSubmit  = (event) => {
     event.preventDefault();
-    console.log('accordion');
+    const error = validate();
+    if (error) {
+      setError(error);
+      return;
+    }
+
     try {
       // Send data to Sanity
       createClient.create({
@@ -38,6 +64,9 @@ const Form = () => {
     } catch (error) {
       console.error("Error sending data to Sanity:", error.message);
     }
+
+    setSuccess('Form submitted successfully!');
+    setError(null);
   };
 
   return (
@@ -63,6 +92,8 @@ const Form = () => {
                     <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" value={formData.message} onChange={handleInputChange}></textarea>
                 </div>
                 <button type="submit" class="custom-text-gray-700 custom-bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>{success}</p>}
                 <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
             </form>
         </div>
